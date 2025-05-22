@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main>
       <h1>Hello World!</h1>
-      <Link href="/users">New User</Link>
+      <Link href="/users">Get All User</Link>
     </main>
   );
 }
