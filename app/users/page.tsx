@@ -1,3 +1,5 @@
+import next from "next";
+import { revalidatePath } from "next/cache";
 import React from "react";
 
 interface User {
@@ -7,7 +9,9 @@ interface User {
 }
 
 const UsersPage = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const res = await fetch("https://jsonplaceholder.typicode.com/users", {
+    next: { revalidate: 10 },
+  });
   const users: User[] = await res.json();
 
   return (
